@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: blog
+  datasource:
+    url: "jdbc:mysql://localhost:3306/blog"
+    username: root
+    password: 123456
+  #    C�i b�n d??i ch? d�ng khi x�y s?ng v�
+  #  h?c ch? th?c th� c?n t?o c�c script SQL m?i d�ng
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      properties:
+        hibernate:
+          format_sql: true
+          dialect: org.hibernate.dialect.MySQL8Dialect
+    #      Hi?n  ?? debug
+    show-sql: true
+server:
+  port: 9090
+  servlet:
+    context-path: /blog
+
