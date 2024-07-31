@@ -2,6 +2,7 @@ package com.nguyen.blog.service;
 
 import com.nguyen.blog.dto.request.UserCreationRequest;
 import com.nguyen.blog.dto.request.UserUpdateRequest;
+import com.nguyen.blog.dto.response.UserDTO;
 import com.nguyen.blog.entity.Category;
 import com.nguyen.blog.entity.Role;
 import com.nguyen.blog.entity.User;
@@ -59,9 +60,14 @@ public class UserService {
             users = userRepository.findByStatus(status, pageable);
         }
         else {
-            users = userRepository.findAll(pageable);
+            users = userRepository.findAllUsers(pageable);
         }
-        CustomPageData<User> data=new CustomPageData<>(users.getTotalElements(),users.getContent());
+//        System.out.println(users.getContent());
+//        for (User user : users.getContent()) {
+//            System.out.println("1111"+user.getRole());
+//        }
+        Page<UserDTO>userDTOS=userRepository.convertToUserDTOPage(users,pageable);
+        CustomPageData<UserDTO> data=new CustomPageData<>(userDTOS.getTotalElements(),userDTOS.getContent());
 
 //        = userRepository.findAll(pageable);
 //        return userRepository.findAll();

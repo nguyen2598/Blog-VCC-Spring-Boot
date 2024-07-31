@@ -7,6 +7,21 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "users")
 public class User {
+    public User() {
+    }
+
+    public User(int id, String username, String password, String email, String ext, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime destroyTime, Role role) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.ext = ext;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.destroyTime = destroyTime;
+        this.role = role;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
