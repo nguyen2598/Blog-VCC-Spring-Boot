@@ -27,9 +27,11 @@ public class UserService {
     private RoleRepository roleRepository;
 
     public User createUser(UserCreationRequest request) {
+        System.out.println("co vao day");
         User user = new User();
-
+        System.out.println("qua1");
         if(userRepository.existsByUsername(request.getUsername())){
+            System.out.println("bug runtime");
             throw new RuntimeException("User existed");
         }
         user.setUsername(request.getUsername());
@@ -42,6 +44,7 @@ public class UserService {
         Role role = roleRepository.findById(request.getRole_id()+"")
                 .orElseThrow(() -> new RuntimeException("Role not found"));
         user.setRole(role);
+        System.out.println("qua2");
         return userRepository.save(user);
     }
     public ResponseEntity<Object> getUsers(int page, int limit,String key, String status) {

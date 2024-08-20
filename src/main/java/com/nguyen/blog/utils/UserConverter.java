@@ -13,6 +13,9 @@ public class UserConverter {
         userDTO.setUsername(user.getUsername());
         userDTO.setEmail(user.getEmail());
         userDTO.setRole(user.getRole());
+        userDTO.setCreatedAt(user.getCreatedAt());
+        userDTO.setUpdatedAt(user.getUpdatedAt());
+        userDTO.setDestroyTime(user.getDestroyTime());
         // Set các thuộc tính khác từ User sang UserDTO nếu cần thiết
         return userDTO;
     }

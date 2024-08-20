@@ -22,4 +22,9 @@ server:
   port: 9090
   servlet:
     context-path: /blog
+security:
+  jwt:
+    secret-key : 3 cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
+  # 1h tính bằng mili giây
+    expiration-time : 3600000
 

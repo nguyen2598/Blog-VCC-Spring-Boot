@@ -1,5 +1,7 @@
 package com.nguyen.blog.dto.request;
 
+import com.nguyen.blog.entity.Role;
+
 public class UserCreationRequest {
     private String username,password,email,ext;
     private int role_id;

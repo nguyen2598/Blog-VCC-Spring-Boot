@@ -10,6 +10,7 @@ public class UserDTO {
     private String username,email;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    private LocalDateTime destroyTime;
     private Role role;
 
     public int getId() {
@@ -58,5 +59,13 @@ public class UserDTO {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public LocalDateTime getDestroyTime() {
+        return destroyTime;
+    }
+
+    public void setDestroyTime(LocalDateTime destroyTime) {
+        this.destroyTime = destroyTime;
     }
 }
